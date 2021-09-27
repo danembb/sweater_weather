@@ -24,6 +24,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'shoulda-matchers'
+  gem 'vcr'
 end
 
 group :development do
@@ -33,7 +34,6 @@ end
 
 group :test do
   gem 'simplecov'
-  gem 'vcr'
   gem 'webmock'
 end
 
