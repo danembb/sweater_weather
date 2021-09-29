@@ -1,6 +1,6 @@
 class Forecast
 
-  atrr_reader :current_weather,
+  attr_reader :current_weather,
               :daily_weather,
               :hourly_weather
 
