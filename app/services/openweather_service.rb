@@ -6,16 +6,5 @@ class OpenweatherService
       end
       BaseService.parse_json(response)
     end
-
-
-    private
-
-    def conn
-      Faraday.new('')
-    end
-
-    def parse_json(response)
-      JSON.parse(response.body, symbolize_names: true)
-    end
   end
 end
