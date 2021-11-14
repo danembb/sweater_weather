@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'mapquest service' do
-  it 'can get latitude and longitude data for a given location', :vcr do
+  it 'can return latitude and longitude data given a location', :vcr do
     response = MapquestService.get_coordinates('northampton,ma')
     coordinates = response[:results][0][:locations][0][:latLng]
 
