@@ -1,5 +1,4 @@
 class Location
-
   attr_reader :lat,
               :lng
 
