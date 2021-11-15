@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'bored service' do
-  it 'returns a relaxation activity' do
-    response = BoredService.get_relaxation_activity
+  it 'returns an activity' do
+    response = BoredService.get_activity("relaxation")
 
     expect(response).to be_a(Hash)
     expect(response).to have_key(:activity)
