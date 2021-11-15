@@ -8,22 +8,20 @@ class ActivitiesSerializer
           "destination": destination,
           "forecast": {
             "summary": forecast.current_weather.conditions,
-            "temperature": forecast.current_weather.temperature
+            "temperature": forecast.current_weather.temperature.round(0).to_s + " F"
           },
-          "activities": {
-            "#{temp_based_activity.activity}": {
+          "activities": [
+              {"title": temp_based_activity.activity,
               "type": temp_based_activity.type,
               "participants": temp_based_activity.participants,
-              "price": temp_based_activity.price
-            },
-            "#{relaxation_activity.activity}": {
+              "price": temp_based_activity.price},
+              {"title": relaxation_activity.activity,
               "type": relaxation_activity.type,
               "participants": relaxation_activity.participants,
-              "price": relaxation_activity.price
-            }
+              "price": relaxation_activity.price}
+            ]
           }
         }
       }
-    }
   end
 end
