@@ -2,10 +2,17 @@ class ForecastFacade
   class << self
     def forecast(lat, lng)
       response = OpenweatherService.get_forecast(lat, lng)
-      all_weather = Forecast.new(response)
-      # current = CurrentWeather.new(all_weather.current_weather)
-      # daily = DailyWeather.new(all_weather.daily_weather)
-      # hourly = HourlyWeather.new(all_weather.hourly_weather)
+      current = CurrentWeather.new(response[:current])
+
+      daily = response[:daily][0..4].map do |day|
+        DailyWeather.new(day)
+      end
+
+      hourly = response[:hourly][0..7].map do |day|
+        HourlyWeather.new(day)
+      end
+
+      Forecast.new(current, daily, hourly)
     end
   end
 end
