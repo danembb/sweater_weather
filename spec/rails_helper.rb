@@ -5,13 +5,6 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 
-VCR.configure do |c|
-  c.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  c.hook_into :webmock
-  c.configure_rspec_metadata!
-  c.allow_http_connections_when_no_cassette = true
-end
-
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -33,10 +26,18 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
-  Shoulda::Matchers.configure do |config|
-    config.integrate do |with|
-      with.test_framework :rspec
-      with.library :rails
-    end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = true
 end

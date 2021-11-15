@@ -8,8 +8,8 @@ RSpec.describe 'location' do
     }
 
     northampton = Location.new(location_data)
-
+    
     expect(northampton.lat).to eq(42.31952)
-    expect(northampton.long).to eq(-72.629756)
+    expect(northampton.lng).to eq(-72.629756)
   end
 end

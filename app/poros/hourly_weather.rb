@@ -6,7 +6,7 @@ class HourlyWeather
               :icon
 
   def initialize(data)
-    @time = Time.zone.at(data[:dt].strftime('%H:%M:%S'))
+    @time = Time.zone.at(data[:dt]).utc.to_s
     @temperature = data[:temp]
     @conditions = data[:weather][0][:description]
     @icon = data[:weather][0][:icon]
