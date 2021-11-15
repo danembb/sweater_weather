@@ -14,5 +14,11 @@ class ForecastFacade
 
       Forecast.new(current, daily, hourly)
     end
+
+    def current_forecast(lat, lng)
+      response = OpenweatherService.get_forecast(lat, lng)
+      current = CurrentWeather.new(response[:current])
+      Forecast.new(current)
+    end
   end
 end

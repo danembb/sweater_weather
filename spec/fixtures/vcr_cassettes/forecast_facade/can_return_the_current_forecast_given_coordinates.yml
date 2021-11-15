@@ -19,11 +19,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 15 Nov 2021 17:46:36 GMT
+      - Mon, 15 Nov 2021 17:46:39 GMT
       Content-Type:
       - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1039'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Mon, 15 Nov 2021 17:46:36 GMT
+      - Mon, 15 Nov 2021 17:46:39 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=8736C5FAA11EE678C9A47E0E49CFCF68; Path=/; HttpOnly
+      - JSESSIONID=CB36563B0DA3AD790AA17EC048BAA9F2; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -51,8 +51,8 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"northampton,ma"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Northampton","adminArea5Type":"City","adminArea4":"Hampshire
-        County","adminArea4Type":"County","adminArea3":"MA","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282032694","unknownInput":"","type":"s","latLng":{"lat":42.31952,"lng":-72.629756},"displayLatLng":{"lat":42.31952,"lng":-72.629756},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=Q1I0YYYPMAMuilkuMR3j7gZVe3p1yUQU&type=map&size=225,160&locations=42.31952,-72.629756|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1512784450"}]}]}'
-  recorded_at: Mon, 15 Nov 2021 17:46:36 GMT
+        County","adminArea4Type":"County","adminArea3":"MA","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282032694","unknownInput":"","type":"s","latLng":{"lat":42.31952,"lng":-72.629756},"displayLatLng":{"lat":42.31952,"lng":-72.629756},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=Q1I0YYYPMAMuilkuMR3j7gZVe3p1yUQU&type=map&size=225,160&locations=42.31952,-72.629756|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-822818529"}]}]}'
+  recorded_at: Mon, 15 Nov 2021 17:46:39 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=45b13e1605345944317ad0521e51c968&exclude=minutely&lat=42.31952&lon=-72.629756&units=imperial
@@ -74,7 +74,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 15 Nov 2021 17:46:37 GMT
+      - Mon, 15 Nov 2021 17:46:39 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -91,7 +91,7 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":42.3195,"lon":-72.6298,"timezone":"America/New_York","timezone_offset":-18000,"current":{"dt":1636998397,"sunrise":1636976498,"sunset":1637011736,"temp":46.29,"feels_like":46.29,"pressure":999,"humidity":61,"dew_point":33.6,"uvi":1.18,"clouds":75,"visibility":10000,"wind_speed":1.01,"wind_deg":337,"wind_gust":8.01,"weather":[{"id":803,"main":"Clouds","description":"broken
+      string: '{"lat":42.3195,"lon":-72.6298,"timezone":"America/New_York","timezone_offset":-18000,"current":{"dt":1636998399,"sunrise":1636976498,"sunset":1637011736,"temp":46.29,"feels_like":46.29,"pressure":999,"humidity":61,"dew_point":33.6,"uvi":1.18,"clouds":75,"visibility":10000,"wind_speed":1.01,"wind_deg":337,"wind_gust":8.01,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}]},"hourly":[{"dt":1636995600,"temp":46.27,"feels_like":41.11,"pressure":1000,"humidity":59,"dew_point":32.76,"uvi":1.37,"clouds":71,"visibility":10000,"wind_speed":10.89,"wind_deg":285,"wind_gust":16.71,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}],"pop":0.04},{"dt":1636999200,"temp":46.29,"feels_like":40.91,"pressure":999,"humidity":61,"dew_point":33.6,"uvi":1.18,"clouds":75,"visibility":10000,"wind_speed":11.54,"wind_deg":289,"wind_gust":18.28,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}],"pop":0.04},{"dt":1637002800,"temp":46.02,"feels_like":40.75,"pressure":1000,"humidity":61,"dew_point":33.35,"uvi":0.72,"clouds":78,"visibility":10000,"wind_speed":10.98,"wind_deg":284,"wind_gust":21.54,"weather":[{"id":803,"main":"Clouds","description":"broken
@@ -149,5 +149,5 @@ http_interactions:
         clouds","icon":"02d"}],"clouds":18,"pop":0,"uvi":2},{"dt":1637510400,"sunrise":1637495340,"sunset":1637529856,"moonrise":1637535120,"moonset":1637503080,"moon_phase":0.57,"temp":{"day":42.6,"min":33.21,"max":46.69,"night":41.61,"eve":46.22,"morn":33.87},"feels_like":{"day":38.97,"night":36.61,"eve":40.6,"morn":33.87},"pressure":1024,"humidity":72,"dew_point":33.03,"wind_speed":12.19,"wind_deg":216,"wind_gust":26.55,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":100,"pop":0.64,"rain":0.62,"uvi":2},{"dt":1637596800,"sunrise":1637581812,"sunset":1637616217,"moonrise":1637624340,"moonset":1637592840,"moon_phase":0.6,"temp":{"day":40.12,"min":34.03,"max":42.12,"night":39.81,"eve":39.52,"morn":36.09},"feels_like":{"day":38.1,"night":33.26,"eve":37.08,"morn":30.92},"pressure":1022,"humidity":59,"dew_point":26.06,"wind_speed":10.33,"wind_deg":66,"wind_gust":24.96,"weather":[{"id":804,"main":"Clouds","description":"overcast
         clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":2}]}'
-  recorded_at: Mon, 15 Nov 2021 17:46:39 GMT
+  recorded_at: Mon, 15 Nov 2021 17:46:40 GMT
 recorded_with: VCR 6.0.0
