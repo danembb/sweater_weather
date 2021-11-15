@@ -4,7 +4,7 @@ RSpec.describe 'forecast' do
   it 'exists and has attributes', :vcr do
     coordinates = MapquestFacade.coordinates('northampton,ma')
     forecast = ForecastFacade.forecast(coordinates.lat, coordinates.lng)
-    require "pry"; binding.pry
+
     expect(forecast).to be_a(Forecast)
     expect(forecast.id).to eq(nil)
     expect(forecast.type).to eq("forecast")

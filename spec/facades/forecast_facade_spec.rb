@@ -36,7 +36,4 @@ RSpec.describe 'forecast facade', :vcr do
       expect(hour_weather.time).to be_a(String)
     end
   end
-
-  it 'can exclude specific data given coordinates' do
-  end
 end
