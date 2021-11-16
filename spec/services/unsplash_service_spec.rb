@@ -9,6 +9,7 @@ RSpec.describe 'unsplash service' do
     expect(response[:results]).to be_an(Array)
     expect(response[:results].first).to have_key(:urls)
     expect(response[:results].first[:urls]).to have_key(:full)
+    expect(response[:results].first).to have_key(:description)
     expect(response[:results].first).to have_key(:user)
     expect(response[:results].first[:user]).to have_key(:username)
   end
