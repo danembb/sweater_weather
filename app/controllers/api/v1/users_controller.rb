@@ -8,6 +8,8 @@ class Api::V1::UsersController < ApplicationController
       render json: { error: "Invalid field" }, status: :bad_request
     elsif params[:password] != params[:password_confirmation]
       render json: { error: "Invalid parameters" }, status: :bad_request
+    # elsif params[:email] == User.find_by(email: user.email)
+    #   render json: { error: "Invalid credentials" }, status: :bad_request
     elsif user.save
       render json: UsersSerializer.new(user), status: 201
     end
