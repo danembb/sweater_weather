@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
     elsif params[:password] != params[:password_confirmation]
       render json: { error: "Invalid parameters" }, status: :bad_request
     elsif user.save
-      render json: UserSerializer.new(user), status: 201
+      render json: UsersSerializer.new(user), status: 201
     end
   end
 
