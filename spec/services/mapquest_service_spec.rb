@@ -22,7 +22,5 @@ RSpec.describe 'mapquest service' do
     expect(response[:route]).to have_key(:formattedTime)
     expect(response[:route]).to have_key(:locations)
     expect(response[:route][:locations]).to be_an(Array)
-    expect(response[:route][:locations][0]).to have_key(:adminArea5)
-    expect(response[:route][:locations][1]).to have_key(:adminArea5)
   end
 end

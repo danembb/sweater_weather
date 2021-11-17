@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'forecast facade', :vcr do
-  it 'can return the forecast given coordinates' do
+RSpec.describe 'forecast facade' do
+  it 'can return the forecast given coordinates', :vcr do
     coordinates = MapquestFacade.coordinates('northampton,ma')
     forecast = ForecastFacade.forecast(coordinates.lat, coordinates.lng)
 
@@ -34,6 +34,19 @@ RSpec.describe 'forecast facade', :vcr do
       expect(hour_weather.icon).to be_a(String)
       expect(hour_weather.temperature).to be_a(Numeric)
       expect(hour_weather.time).to be_a(String)
+    end
+  end
+
+  it 'can create an hourly forecast for 48 hours', :vcr do
+    coordinates = MapquestFacade.coordinates('northampton,ma')
+    forecast = ForecastFacade.destination_weather(coordinates.lat, coordinates.lng)
+
+    forecast.each do |hour|
+      expect(hour).to be_an(HourlyWeather)
+      expect(hour.conditions).to be_a(String)
+      expect(hour.icon).to be_a(String)
+      expect(hour.temperature).to be_a(Numeric)
+      expect(hour.time).to be_a(String)
     end
   end
 end
