@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 
-RSpec.describe 'create user endpoint', :vcr do
+RSpec.describe 'create user endpoint', type: :request do
   describe 'happy path' do
-    it 'can create a user' do
+    it 'can create a user', :vcr do
       body = {
               "email": "tinycatsneezes@example.com",
               "password": "password1",
