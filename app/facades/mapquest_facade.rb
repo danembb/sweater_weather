@@ -7,14 +7,19 @@ class MapquestFacade
       Location.new(location_data)
     end
 
-    def directions(start_loc, end_loc)
-      response = MapquestService.get_route(start_loc, end_loc)
-      time = response[:route]
-      lat = MapquestFacade.coordinates(end_loc).lat
-      lng = MapquestFacade.coordinates(end_loc).lng
-      forecast = ForecastFacade.destination_weather(lat, lng)
+    def trip(origin, destination)
+      response = MapquestService.get_route(origin, destination)
+      @lat = MapquestFacade.coordinates(destination).lat
+      @lng = MapquestFacade.coordinates(destination).lng
 
-      RoadTrip.new(time, forecast)
+      trip = {
+              start_city: origin,
+              end_city: destination,
+              time: response[:route][:time],
+              weather: ForecastFacade.forecast(@lat, @lng)
+      }
+
+      RoadTrip.new(trip)
     end
   end
 end

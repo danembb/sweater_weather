@@ -7,8 +7,8 @@ class MapquestService
       parsed = BaseService.parse_json(response)
     end
 
-    def get_route(start_loc, end_loc)
-      response = BaseService.conn('http://www.mapquestapi.com').get("/directions/v2/route?from=#{start_loc}&to=#{end_loc}") do |req|
+    def get_route(origin, destination)
+      response = BaseService.conn('http://www.mapquestapi.com').get("/directions/v2/route?from=#{origin}&to=#{destination}") do |req|
         req.params["key"] = ENV["mapquest_api_key"]
       end
       parsed = BaseService.parse_json(response)

@@ -8,19 +8,11 @@ class ForecastFacade
         DailyWeather.new(day)
       end
 
-      hourly = response[:hourly][0..7].map do |day|
-        HourlyWeather.new(day)
+      hourly = response[:hourly][0..7].map do |hour|
+        HourlyWeather.new(hour)
       end
 
       Forecast.new(current, daily, hourly)
-    end
-
-    def destination_weather(lat, lng)
-      response = OpenweatherService.get_forecast(lat, lng)
-
-      response[:hourly].map do |data|
-        HourlyWeather.new(data)
-      end 
     end
   end
 end
