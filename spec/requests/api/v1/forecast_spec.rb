@@ -21,7 +21,6 @@ RSpec.describe 'create forecast endpoint', type: :request do
 
   describe 'sad paths' do
     it 'can return an error when missing parameters', :vcr do
-
       get '/api/v1/forecast'
 
       expect(response).to_not be_successful

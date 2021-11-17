@@ -28,6 +28,7 @@ RSpec.describe 'forecast facade' do
       expect(day_weather.sunrise).to be_a(String)
       expect(day_weather.sunset).to be_a(String)
     end
+    
     forecast.hourly_weather.each do |hour_weather|
       expect(hour_weather).to be_a(HourlyWeather)
       expect(hour_weather.conditions).to be_a(String)

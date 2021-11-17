@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'create background endpoint', type: :request do
   describe 'happy paths' do
     it 'can return a forecast background given parameters', :vcr do
-
       get '/api/v1/backgrounds?location=denver,co'
 
       expect(response).to be_successful
