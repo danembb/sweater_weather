@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'create sessions endpoint', type: :request do
   describe 'happy paths' do
-    it 'can return a user upon authentication' do
+    it 'can return a user upon authentication', :vcr do
       user = User.create(email: "tinycatsneezes@example.com", password: "wow", api_key: "123-345-4567q")
 
       login = {

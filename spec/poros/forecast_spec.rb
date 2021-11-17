@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'forecast' do
+RSpec.describe Forecast do
   it 'exists and has attributes', :vcr do
     coordinates = MapquestFacade.coordinates('northampton,ma')
     forecast = ForecastFacade.forecast(coordinates.lat, coordinates.lng)

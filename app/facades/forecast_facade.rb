@@ -8,8 +8,8 @@ class ForecastFacade
         DailyWeather.new(day)
       end
 
-      hourly = response[:hourly][0..7].map do |day|
-        HourlyWeather.new(day)
+      hourly = response[:hourly][0..7].map do |hour|
+        HourlyWeather.new(hour)
       end
 
       Forecast.new(current, daily, hourly)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'location' do
+RSpec.describe Location do
   it 'can return a location object given coordinates' do
     location_data = {
       "lat": 42.31952,
@@ -8,7 +8,7 @@ RSpec.describe 'location' do
     }
 
     northampton = Location.new(location_data)
-    
+
     expect(northampton.lat).to eq(42.31952)
     expect(northampton.lng).to eq(-72.629756)
   end
