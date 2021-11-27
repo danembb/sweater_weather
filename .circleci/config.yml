@@ -8,9 +8,9 @@ orbs:
 jobs:
   build:
     # parallelism: 3
-    # docker:
-    #   image: circleci/ruby:2.7.2
-    #   pg_image: circleci/postgres:9.6-alpine
+    docker:
+      image: circleci/ruby:2.7.2
+      pg_image: circleci/postgres:9.6-alpine
     #   environment:
     #     POSTGRES_USER: postgres
     #     POSTGRES_DB: sweater_weather_development
@@ -28,7 +28,7 @@ jobs:
           name: Bundler Version
           command: bundle -v
       - run:
-        name: Build gemfile
+        name: Build Gemfile
         command: bundle install
       - run:
         name: Setup DB
